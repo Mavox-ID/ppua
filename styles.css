@@ -22,7 +22,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
-    flex-wrap: wrap; /* Позволяет перенос на мобильных */
+    flex-wrap: wrap;
 }
 
 .flag-container {
@@ -134,12 +134,26 @@ body {
     margin: 15px 0 10px;
 }
 
+/* Стили для аудиоплеера */
+.audio-player {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+audio {
+    width: 100%;
+    max-width: 300px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    outline: none;
+}
+
 /* Мобильная версия */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
         align-items: flex-start;
-        position: relative;
     }
 
     .title {
@@ -148,9 +162,9 @@ body {
     }
 
     .lang-btn {
-        position: static; /* Убираем абсолютное позиционирование */
+        position: static;
         margin-top: 20px;
-        width: 100%; /* Кнопка на всю ширину */
+        width: 100%;
         text-align: center;
     }
 
