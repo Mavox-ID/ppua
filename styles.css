@@ -22,6 +22,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
+    flex-wrap: wrap; /* Позволяет перенос на мобильных */
 }
 
 .flag-container {
@@ -72,9 +73,6 @@ body {
 }
 
 .lang-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
     background: #ff007a;
     border: none;
     padding: 10px 20px;
@@ -83,6 +81,9 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .lang-btn:hover {
@@ -131,4 +132,29 @@ body {
 .rights h3 {
     color: #ffcc00;
     margin: 15px 0 10px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .title {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .lang-btn {
+        position: static; /* Убираем абсолютное позиционирование */
+        margin-top: 20px;
+        width: 100%; /* Кнопка на всю ширину */
+        text-align: center;
+    }
+
+    .flag-container {
+        margin-bottom: 20px;
+    }
 }
