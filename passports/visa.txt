@@ -1,0 +1,11 @@
+<div class="visa-section">
+        <div class="visa">
+            <div class="icon exit"></div>
+            <p>Выезд из страны ВС Allcave</p>
+            <p>Въезд в страну Украина</p>
+        </div>
+        <div class="visa">
+            <div class="icon entry"></div>
+            <p>Въезд в страну ВС Allcave</p>
+            <p>Выезд из страны Украина</p>
+        </div>
