@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('time').textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
         // Отображаем текущее состояние WTS (+55 или -55 минут)
-        const wtsStatus = wtsMinutes > 0 ? "+55 минут" : "-55 минут";
+        const wtsStatus = wtsMinutes > 0 ? "+55 minut" : "-55 minut";
         document.getElementById('wts-status').textContent = `WTS: ${wtsStatus}`;
 
         // Вычисляем время до смены состояния
@@ -83,20 +83,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const minutesUntilMorning = thresholdMorning - totalUTCMinutes;
             const hoursUntil = Math.floor(minutesUntilMorning / 60);
             const minutesUntil = minutesUntilMorning % 60;
-            timeUntilChange = `До +55: ${hoursUntil} ч ${String(minutesUntil).padStart(2, '0')} мин`;
+            timeUntilChange = `Na +55: ${hoursUntil} ч ${String(minutesUntil).padStart(2, '0')} min`;
         } else if (totalUTCMinutes >= thresholdMorning && totalUTCMinutes < thresholdEvening) {
             // Сейчас +55 минут, ждём переход на -55 в 20:00 UTC
             const minutesUntilEvening = thresholdEvening - totalUTCMinutes;
             const hoursUntil = Math.floor(minutesUntilEvening / 60);
             const minutesUntil = minutesUntilEvening % 60;
-            timeUntilChange = `До -55: ${hoursUntil} ч ${String(minutesUntil).padStart(2, '0')} мин`;
+            timeUntilChange = `Na -55: ${hoursUntil} ч ${String(minutesUntil).padStart(2, '0')} min`;
         } else {
             // Сейчас -55 минут, ждём переход на +55 в 05:55 UTC следующего дня
             const minutesUntilMidnight = (24 * 60) - totalUTCMinutes;
             const minutesUntilMorning = minutesUntilMidnight + thresholdMorning;
             const hoursUntil = Math.floor(minutesUntilMorning / 60);
             const minutesUntil = minutesUntilMorning % 60;
-            timeUntilChange = `До +55: ${hoursUntil} ч ${String(minutesUntil).padStart(2, '0')} мин`;
+            timeUntilChange = `Na +55: ${hoursUntil} ч ${String(minutesUntil).padStart(2, '0')} min`;
         }
 
         document.getElementById('wts-change').textContent = timeUntilChange;
